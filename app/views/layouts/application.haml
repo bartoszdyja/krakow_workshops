@@ -9,12 +9,16 @@
     = javascript_include_tag 'application'
 
   %body
+    = flash_messages
     %nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          %span.navbar-brand #{AppConfig.workshops_name}
-        %p.navbar-text.navbar-right
-          Links should go here
+      .navbar-header
+        %span.navbar-brand #{AppConfig.workshops_name}
+      %p.navbar-text.navbar-right
+        -if current_user
+          =link_to 'Logout', destroy_user_session_path, method: :delete
+        -else
+          =link_to 'Sign Up', new_user_registration_path
+          =link_to 'Sign In', new_user_session_path
     .container-fluid
       .row
         .col-lg-12

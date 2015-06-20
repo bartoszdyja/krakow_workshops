@@ -1,1 +1,50 @@
 @import "bootstrap";
+
+html{
+	min-height: 100%;
+
+}
+
+
+
+body{
+	background: linear-gradient(to bottom, #DDD 0%, rgba(225, 225, 225, 0) 30%, rgba(235, 235, 235, 0) 81%, #EEE 100%) repeat scroll 0% 0% #FFF;
+	font-family: "Raleway",Arial,sans-serif;
+	font-weight: 200;
+	min-height: 100vh;
+	font-size: 12px;
+	text-align: center;
+}
+
+.navbar-default{
+	background: #2C2C2C;
+	color: white;
+	border: none;
+	border-bottom: 0px solid;
+	border-color: #404040;
+	border-radius: 0;
+	color: #404040;
+	margin-bottom: 0;
+
+}
+
+[class*="col-sm-4"] {
+    padding: 15px;
+}
+
+.right{
+	text-align: right;
+	padding-right: 5px;
+}
+
+a,
+a:hover{
+	color: #FF8400;
+	padding-right: 10px;
+}
+
+.title > a{
+	color: #686868;
+}
+
+
