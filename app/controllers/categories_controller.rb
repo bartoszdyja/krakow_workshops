@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  prepend_before_filter :authenticate_admin, only: [:new, :edit, :update, :destroy, :create]
+  before_action :authenticate_admin, only: [:new, :edit, :update, :destroy, :create]
   
   expose(:categories)
   expose(:category)

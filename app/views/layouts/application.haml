@@ -1,6 +1,7 @@
 !!!
 %html{ lang: 'en' }
   %head
+    %title #{AppConfig.workshops_name}
     %meta{ charset: 'utf-8' }/
     %meta{ content: 'IE=Edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
     %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }/
@@ -9,16 +10,16 @@
     = javascript_include_tag 'application'
 
   %body
-    = flash_messages
     %nav.navbar.navbar-default
       .navbar-header
-        %span.navbar-brand #{AppConfig.workshops_name}
+        %span.navbar-brand.logo=link_to AppConfig.workshops_name, root_path
       %p.navbar-text.navbar-right
         -if current_user
           =link_to 'Logout', destroy_user_session_path, method: :delete
         -else
           =link_to 'Sign Up', new_user_registration_path
           =link_to 'Sign In', new_user_session_path
+    - flash_messages
     .container-fluid
       .row
         .col-lg-12

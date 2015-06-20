@@ -25,6 +25,7 @@ body{
 	border-radius: 0;
 	color: #404040;
 	margin-bottom: 0;
+	padding-right: 10px;
 
 }
 
@@ -37,14 +38,27 @@ body{
 	padding-right: 5px;
 }
 
+.left{
+	text-align: left;
+}
+
 a,
 a:hover{
 	color: #FF8400;
-	padding-right: 10px;
+	
 }
 
 .title > a{
 	color: #686868;
 }
 
+h3{
+	margin: 0;
+}
 
+.logo > a,
+a:hover
+{
+	color: #A2A2A2;
+	text-decoration: none;
+}
