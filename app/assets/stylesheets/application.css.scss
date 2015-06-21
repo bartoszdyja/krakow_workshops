@@ -33,6 +33,10 @@ body{
     padding: 15px;
 }
 
+.container-fluid{
+	width: 80%;
+}
+
 .right{
 	text-align: right;
 	padding-right: 5px;
@@ -61,4 +65,10 @@ a:hover
 {
 	color: #A2A2A2;
 	text-decoration: none;
+}
+
+hr {
+  color: #FF8400;
+	background-color: #FF8400;
+	height: 1px;
 }
