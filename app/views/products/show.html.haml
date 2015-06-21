@@ -1,24 +1,23 @@
 
-%p
-  %b Title:
+%h2
   = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
-
-%p
-  %b Category
-  = product.category.name
-
-= render reviews
-
--if user_signed_in?
-  %h3 Reviews
-  = render 'reviews/form'
-
+  .small=product.try(:average_rating)
+%p= product.description
+%h5.left= product.price
+%p.right
+  Listed on
+  =product.created_at.strftime("%A, #{product.created_at.day.ordinalize} %B ")
+  by
+  =link_to product.user.firstname #user_path(product.user)
 -if current_user == product.user
   = link_to 'Edit', edit_category_product_path(category, product)
+
+<hr>
+%h3 Reviews
+= render reviews
+
+-if user_signed_in?   
+  = render 'reviews/form'
+
+
 = link_to 'Back', category_path(category)

@@ -15,6 +15,7 @@
         %span.navbar-brand.logo=link_to AppConfig.workshops_name, root_path
       %p.navbar-text.navbar-right
         -if current_user
+          =link_to 'Profile'
           =link_to 'Logout', destroy_user_session_path, method: :delete
         -else
           =link_to 'Sign Up', new_user_registration_path

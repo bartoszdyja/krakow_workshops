@@ -1,4 +1,7 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+.well.well-sm
+  %h5.left.col-sm-1
+    %b=review.rating
+  %p= review.content
+  %p.right
+    %em= review.created_at.strftime("%d %B %Y")
+    %em= review.author
