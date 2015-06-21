@@ -8,7 +8,7 @@
   Listed on
   =product.created_at.strftime("%A, #{product.created_at.day.ordinalize} %B ")
   by
-  =link_to product.user.firstname #user_path(product.user)
+  =link_to product.user.firstname, user_path(product.user)
 -if current_user == product.user
   = link_to 'Edit', edit_category_product_path(category, product)
 

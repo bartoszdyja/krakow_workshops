@@ -4,4 +4,4 @@
   %p= review.content
   %p.right
     %em= review.created_at.strftime("%d %B %Y")
-    %em= review.author
+    %em=link_to review.author, user_path(review.user)

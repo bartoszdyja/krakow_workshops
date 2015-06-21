@@ -1,0 +1,40 @@
+%table.table
+	%tr
+		%td Firstname
+		%td=user.firstname
+	%tr
+		%td Lastname
+		%td=user.lastname
+	%tr
+		%td Email
+		%td=user.email
+	-if current_user==user
+		%tr
+			%td Account
+			%td=link_to 'Update details', edit_user_registration_path
+	%tr
+		%td Joined
+		%td=user.created_at.strftime("%d/%m/%Y")
+	%tr
+		%td Products added
+		%td=user.products.count
+	%tr
+		%td Reviews added
+		%td=user.reviews.count
+	%tr
+		%td{colspan: 2} 
+			%b Recent reviews
+	
+	-user.reviews.last(5).reverse.each do |u|
+		%tr
+			%td
+				=u.rating
+				given on 
+				=u.created_at.strftime("%d-%m-%y")
+				to
+				=u.product.title
+			%td{colspan: 2}=u.content
+
+
+.clearfix
+= link_to 'Home', root_path
